@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Ground
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - Ground
+  - Bricks
+  - Backgorund
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Backgorund
+    uniqueID: 460015423
+    locked: 0
+  - name: Ground
+    uniqueID: 4100853889
+    locked: 0
+  - name: Bricks
+    uniqueID: 2253748883
+    locked: 0
+  - name: Player
+    uniqueID: 3422032081
+    locked: 0
+  - name: Items
+    uniqueID: 1658668813
+    locked: 0
+  - name: Collected
+    uniqueID: 1212368901
+    locked: 0
