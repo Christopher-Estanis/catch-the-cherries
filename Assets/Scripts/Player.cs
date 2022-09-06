@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class Player : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class Player : MonoBehaviour
 
   private Rigidbody2D rig;
   private Animator anim;
+
+  private string[] resetJumpTags = { "Ground", "Bricks" };
 
   // Start is called before the first frame update
   void Start()
@@ -53,8 +56,6 @@ public class Player : MonoBehaviour
 
   void Jump()
   {
-    Debug.Log(Input.GetButtonDown("Jump"));
-    Debug.Log(isJumping);
     if (Input.GetKeyDown(KeyCode.Space))
     {
       if (!isJumping || doubleJump)
@@ -76,9 +77,9 @@ public class Player : MonoBehaviour
 
   void OnCollisionEnter2D(Collision2D collision)
   {
-    Debug.Log(collision.gameObject.tag);
-    Debug.Log(isJumping);
-    if (collision.gameObject.tag == "Ground")
+    bool isResetingJumpTag = -1 < Array.IndexOf(this.resetJumpTags, collision.gameObject.tag);
+
+    if (isResetingJumpTag)
     {
       isJumping = false;
       anim.SetBool("jump", false);
@@ -87,7 +88,9 @@ public class Player : MonoBehaviour
 
   void OnCollisionExit2D(Collision2D collision)
   {
-    if (collision.gameObject.tag == "Ground")
+    bool isResetingJump = -1 < Array.IndexOf(this.resetJumpTags, collision.gameObject.tag);
+
+    if (isResetingJump)
     {
       isJumping = true;
     }
